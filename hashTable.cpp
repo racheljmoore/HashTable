@@ -1,8 +1,26 @@
 #include "hashTable.h"
 #include <cstdlib>
 #include <isostream>
-#include <list>
-#include <iostream>
+
+
+
+
+class HashTable {
+private:
+    int numkeys;           // Number of buckets
+    std::list<int>* hashT; // Pointer to an array of lists
+
+    int hashKey(int data); // Hash function
+
+public:
+    HashTable(int numkeys); // Constructor
+    ~HashTable();           // Destructor
+
+    void insertData(int data);       // Insert data
+    void displayHashTable();         // Display the table
+    bool findValue(int data);        // Find a value
+    bool deleteData(int data);       // Delete a value
+};
 
 using namespace std;
 
